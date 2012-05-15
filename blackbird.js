@@ -178,6 +178,10 @@
 		body.removeChild( bbird );
 		body.appendChild( bbird );
 		bbird.style.display = 'block';
+		//added by Eonasdan/Jonathan Peterson to make dialog box draggable if jquery-ui is detected
+		if (jQuery.ui && jQuery.ui.version) {
+		        jQuery("#blackbird").draggable({ cancel: "div.main" });
+		}
 	}
 	
 	//sets the position
