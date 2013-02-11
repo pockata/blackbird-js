@@ -214,7 +214,7 @@
 		state.size = size;
 		setState();
 		scrollToBottom();
-	}for (
+	}
 
 	function setState() {
 		var props = [];
