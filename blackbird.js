@@ -313,7 +313,7 @@
         if(document.body)
           init();
         else 
-	  addEvent( window, 'load', 
+	  addEvent( window, 'load', init );
 		/* initialize Blackbird when the page loads */
 		function init() {
 			var body = document.getElementsByTagName( 'BODY' )[ 0 ];
@@ -348,5 +348,5 @@
 				removeEvent( IDs.controls, 'click', clickControl );
 				removeEvent( document, 'keyup', readKey );
 			});
-		});
+		}
 })();
