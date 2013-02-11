@@ -35,7 +35,7 @@
 	
 	function generateMarkup() { //build markup
 		var spans = [];
-		for ( type in messageTypes ) {
+		for ( var type in messageTypes ) {
 			spans.push( [ '<span class="', type, '" type="', type, '"></span>'].join( '' ) );
 		}
 
@@ -123,7 +123,7 @@
 				var filters = document.getElementById( IDs.filters ).getElementsByTagName( 'SPAN' );
 
 				var active = 0;
-				for ( entry in messageTypes ) {
+				for ( var entry in messageTypes ) {
 					if ( messageTypes[ entry ] ) active++;
 				}
 				var oneActiveFilter = ( active == 1 && messageTypes[ type ] );
@@ -142,7 +142,7 @@
 
 			//build outputList's class from messageTypes object
 			var disabledTypes = [];
-			for ( type in messageTypes ) {
+			for ( var type in messageTypes ) {
 				if ( ! messageTypes[ type ] ) disabledTypes.push( type );
 			}
 			disabledTypes.push( '' );
@@ -218,7 +218,7 @@
 
 	function setState() {
 		var props = [];
-		for ( entry in state ) {
+		for ( var entry in state ) {
 			var value = ( state[ entry ] && state[ entry ].constructor === String ) ? '"' + state[ entry ] + '"' : state[ entry ]; 
 			props.push( entry + ':' + value );
 		}
@@ -229,7 +229,7 @@
 		document.cookie = [ 'blackbird={', props, '}; expires=', expiration.toUTCString() ,';' ].join( '' );
 
 		var newClass = [];
-		for ( word in classes ) {
+		for ( var word in classes ) {
 			newClass.push( classes[ word ] );
 		}
 		bbird.className = newClass.join( ' ' );
