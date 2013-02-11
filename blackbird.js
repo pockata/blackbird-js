@@ -310,10 +310,12 @@
 				return currentTime;
 			}
 	}
-
-	addEvent( window, 'load', 
+        if(document.body)
+          init();
+        else
+	  addEvent( window, 'load', 
 		/* initialize Blackbird when the page loads */
-		function() {
+		function init() {
 			var body = document.getElementsByTagName( 'BODY' )[ 0 ];
 			bbird = body.appendChild( generateMarkup() );
 			outputList = bbird.getElementsByTagName( 'OL' )[ 0 ];
